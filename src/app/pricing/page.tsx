@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
@@ -11,220 +10,225 @@ import {
   Sparkles,
   Zap,
   Crown,
-  Building,
-  ArrowRight,
   Users,
-  Star,
+  HelpCircle,
+  ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const plans = [
   {
-    name: "Free",
-    price: "0",
-    priceYearly: "0",
-    description: "Get started with basic features",
-    icon: Sparkles,
-    color: "text-muted-foreground",
-    bgColor: "bg-secondary/50",
+    name: "Bepul",
+    price: "0$",
+    period: "Abadiy",
+    description: "Boshlash uchun muhim xususiyatlar",
     features: [
-      { text: "Basic announcements", included: true },
-      { text: "Simple search", included: true },
-      { text: "Limited roadmap preview", included: true },
-      { text: "View prep hubs (no join)", included: true },
-      { text: "Community access", included: true },
-      { text: "AI mentor", included: false },
-      { text: "Team matching", included: false },
-      { text: "Priority support", included: false },
+      "Asosiy imkoniyatlarni qidirish",
+      "Oyiga 3 ta yo'l xaritasi yaratish",
+      "Umumiy tayyorgarlik markazlariga kirish",
+      "E-mail ogohlantirishlari",
+      "Hamjamiyat forumiga kirish",
     ],
+    notIncluded: [
+      "AI shaxsiylashtirilgan tavsiyalar",
+      "Mentorlar bilan bog'lanish",
+      "Murakkab tahlillar",
+      "Ustuvor qo'llab-quvvatlash",
+    ],
+    cta: "Bepul Boshlash",
+    popular: false,
   },
   {
     name: "Premium",
-    price: "8",
-    priceYearly: "70",
-    description: "For ambitious students",
-    icon: Zap,
-    color: "text-emerald-400",
-    bgColor: "bg-emerald-500/10",
+    price: "9.99$",
+    period: "oyiga",
+    description: "Jiddiy talabalar uchun",
+    features: [
+      "Bepuldagi hamma narsa, shuningdek:",
+      "Cheksiz yo'l xaritalari",
+      "AI-quvvatli shaxsiylashtirilgan tavsiyalar",
+      "Barcha tayyorgarlik markazlariga kirish",
+      "Mentorlar bilan bog'lanish",
+      "Cheksiz jamoa moslashtirish",
+      "Kengaytirilgan tahlillar",
+      "Ustuvor e-mail qo'llab-quvvatlash",
+      "Offline kirish",
+    ],
+    notIncluded: [
+      "Jamoalar uchun funktsiyalar",
+      "Maxsus brending",
+      "API kirish",
+    ],
+    cta: "Premium Olish",
     popular: true,
-    features: [
-      { text: "Full announcement access", included: true },
-      { text: "Advanced search & filters", included: true },
-      { text: "AI-powered roadmap", included: true },
-      { text: "Join all prep hubs", included: true },
-      { text: "Team matching", included: true },
-      { text: "Mentor recommendations", included: true },
-      { text: "Basic AI mentor", included: true },
-      { text: "Priority support", included: true },
-    ],
   },
   {
-    name: "Pro",
-    price: "20",
-    priceYearly: "180",
-    description: "For top university applicants",
-    icon: Crown,
-    color: "text-amber-400",
-    bgColor: "bg-amber-500/10",
+    name: "Jamoalar",
+    price: "Boshqa",
+    period: "har bir universitet",
+    description: "Tashkilotlar va universitetlar uchun",
     features: [
-      { text: "Everything in Premium", included: true },
-      { text: "1-on-1 mentor sessions", included: true },
-      { text: "Global hackathon prep hubs", included: true },
-      { text: "Advanced AI mentor", included: true },
-      { text: "University application roadmap", included: true },
-      { text: "Certificate programs", included: true },
-      { text: "Exclusive events access", included: true },
-      { text: "Personal success manager", included: true },
+      "Premiumdagi hamma narsa, shuningdek:",
+      "Bir nechta foydalanuvchi o'rinlari",
+      "Maxsus brending va oq belgi",
+      "API kirish va integratsiyalar",
+      "Maxsus tayyorgarlik markazlari",
+      "Jamoalar boshqaruvi paneli",
+      "Talabalar o'sishini kuzatish",
+      "Kengaytirilgan hisobotlar",
+      "Maxsus hisob menejeri",
+      "Joyda o'qitish va onboarding",
     ],
+    notIncluded: [],
+    cta: "Aloqaga Chiqish",
+    popular: false,
   },
 ];
 
-const enterprisePlans = [
+const faqs = [
   {
-    name: "University",
-    description: "For educational institutions",
-    price: "From $500/year",
-    features: [
-      "Custom dashboard for administrators",
-      "Bulk student accounts",
-      "Event posting capabilities",
-      "Analytics and reporting",
-      "Student progress tracking",
-    ],
+    q: "Bepul rejadan Premiumga o'tishim mumkinmi?",
+    a: "Ha! Istalgan vaqtda o'tishingiz mumkin. Yangilashda faqat prorata qismi to'lanadi va darhol barcha Premium funktsiyalariga ega bo'lasiz.",
   },
   {
-    name: "Organization",
-    description: "For companies & NGOs",
-    price: "From $1,000/year",
-    features: [
-      "Post unlimited opportunities",
-      "Employer branding",
-      "Talent pipeline access",
-      "Application management",
-      "Custom integrations",
-    ],
-  },
-];
-
-const testimonials = [
-  {
-    name: "Aziza K.",
-    role: "Premium Member",
-    quote: "The personalized roadmap helped me land internships at 3 top companies.",
+    q: "Pulni qaytarish siyosati qanday?",
+    a: "Biz 14 kunlik pulni qaytarish kafolatini taklif qilamiz. Agar xizmatimizdan mamnun bo'lmasangiz, to'liq qaytarish uchun bizga murojaat qiling.",
   },
   {
-    name: "Jamshid T.",
-    role: "Pro Member",
-    quote: "1-on-1 mentor sessions were game-changing for my university applications.",
+    q: "Premium obunani bekor qilishim mumkinmi?",
+    a: "Albatta! Istalgan vaqtda obunani bekor qilishingiz mumkin. Joriy davrning oxiriga qadar Premium funktsiyalariga kirishingiz davom etadi.",
+  },
+  {
+    q: "Talabalarga chegirmalar mavjudmi?",
+    a: "Ha! Haqiqiy .edu e-mail manzili bilan ro'yxatdan o'tgan talabalar Premium rejasidan 20% chegirmani oladi.",
+  },
+  {
+    q: "Jamoalar rejasi qanday ishlaydi?",
+    a: "Jamoalar rejasi universitet klub, tashkilot yoki institutlar uchun mo'ljallangan. Talabalaringiz uchun maxsus narx olish va kengaytirilgan funktsiyalarni muhokama qilish uchun sotuvga murojaat qiling.",
+  },
+  {
+    q: "To'lov qanday xavfsiz?",
+    a: "Biz barcha to'lovlarni xavfsiz ravishda qayta ishlash uchun Stripe-dan foydalanamiz. Biz hech qachon sizning to'lov ma'lumotlaringizni saqlamaymiz.",
   },
 ];
 
 export default function PricingPage() {
-  const [isYearly, setIsYearly] = useState(true);
+  const [isAnnual, setIsAnnual] = useState(false);
 
   return (
     <div className="min-h-screen pt-20 pb-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4" />
-            <span>Simple, Transparent Pricing</span>
-          </div>
           <h1 className="text-4xl sm:text-5xl font-bold font-['Sora'] mb-4">
-            Choose Your <span className="text-gradient">Growth Plan</span>
+            Sodda, <span className="text-gradient">Shaffof</span> Narxlar
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            Start free and upgrade as you grow. All plans include access to our community.
+            Sizning ehtiyojlaringizga mos keladigan rejani tanlang. Istalgan vaqtda yangilash, pasaytirish yoki bekor qilish.
           </p>
 
-          <div className="inline-flex items-center gap-4 p-1 rounded-xl bg-secondary/50">
+          <div className="inline-flex items-center gap-3 p-1 rounded-xl bg-secondary/50">
             <button
-              onClick={() => setIsYearly(false)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                !isYearly ? "bg-background text-foreground shadow-sm" : "text-muted-foreground"
+              onClick={() => setIsAnnual(false)}
+              className={`px-6 py-2 rounded-lg text-sm font-medium transition-all ${
+                !isAnnual
+                  ? "bg-gradient-primary text-white"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              Monthly
+              Oylik
             </button>
             <button
-              onClick={() => setIsYearly(true)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${
-                isYearly ? "bg-background text-foreground shadow-sm" : "text-muted-foreground"
+              onClick={() => setIsAnnual(true)}
+              className={`px-6 py-2 rounded-lg text-sm font-medium transition-all ${
+                isAnnual
+                  ? "bg-gradient-primary text-white"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              Yearly
-              <Badge className="bg-emerald-500/10 text-emerald-400 text-xs">Save 2 months</Badge>
+              Yillik
+              <Badge className="ml-2 bg-emerald-500/20 text-emerald-400 border-0">
+                20% Tejash
+              </Badge>
             </button>
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="grid md:grid-cols-3 gap-6 mb-16"
-        >
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
           {plans.map((plan, i) => (
-            <div
+            <motion.div
               key={i}
-              className={`glass-card rounded-3xl p-6 relative ${
-                plan.popular ? "border-emerald-500/50 ring-1 ring-emerald-500/20" : ""
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              className={`glass-card rounded-2xl p-8 relative ${
+                plan.popular ? "border-emerald-500/50 shadow-lg shadow-emerald-500/20" : ""
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-gradient-primary text-white">Most Popular</Badge>
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <Badge className="bg-gradient-primary text-white border-0 px-4 py-1">
+                    <Crown className="w-3 h-3 mr-1" />
+                    Eng Mashhur
+                  </Badge>
                 </div>
               )}
-              <div className={`w-12 h-12 rounded-xl ${plan.bgColor} flex items-center justify-center mb-4`}>
-                <plan.icon className={`w-6 h-6 ${plan.color}`} />
-              </div>
-              <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
-              <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
+
               <div className="mb-6">
-                <span className="text-4xl font-bold">
-                  ${isYearly ? plan.priceYearly : plan.price}
-                </span>
-                <span className="text-muted-foreground">
-                  {plan.price !== "0" && `/${isYearly ? "year" : "month"}`}
-                </span>
-                {isYearly && plan.price !== "0" && (
-                  <div className="text-xs text-emerald-400 mt-1">
-                    ~${Math.round(parseInt(plan.priceYearly) / 12)}/month
-                  </div>
+                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-bold">
+                    {plan.price === "Boshqa" ? plan.price : (
+                      isAnnual && plan.price !== "0$" 
+                        ? `${(parseFloat(plan.price) * 12 * 0.8).toFixed(2)}$`
+                        : plan.price
+                    )}
+                  </span>
+                  {plan.price !== "Boshqa" && (
+                    <span className="text-muted-foreground">
+                      /{isAnnual ? "yil" : plan.period}
+                    </span>
+                  )}
+                </div>
+                {plan.price !== "Boshqa" && plan.price !== "0$" && (
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Istalgan vaqtda bekor qilish
+                  </p>
                 )}
               </div>
-              <ul className="space-y-3 mb-6">
+
+              <Button
+                className={`w-full mb-6 ${
+                  plan.popular
+                    ? "bg-gradient-primary hover:opacity-90"
+                    : "bg-secondary hover:bg-secondary/80"
+                }`}
+              >
+                {plan.cta}
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+
+              <div className="space-y-3">
                 {plan.features.map((feature, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm">
-                    {feature.included ? (
-                      <Check className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                    ) : (
-                      <X className="w-5 h-5 text-muted-foreground/50 flex-shrink-0" />
-                    )}
-                    <span className={feature.included ? "" : "text-muted-foreground/50"}>
-                      {feature.text}
-                    </span>
-                  </li>
+                  <div key={j} className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-foreground">{feature}</span>
+                  </div>
                 ))}
-              </ul>
-              <Link href="/auth/register">
-                <Button
-                  className={`w-full ${
-                    plan.popular
-                      ? "bg-gradient-primary hover:opacity-90"
-                      : "bg-secondary hover:bg-secondary/80"
-                  }`}
-                >
-                  {plan.price === "0" ? "Get Started Free" : "Upgrade Now"}
-                </Button>
-              </Link>
-            </div>
+                {plan.notIncluded.map((feature, j) => (
+                  <div key={j} className="flex items-start gap-2 opacity-50">
+                    <X className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -233,37 +237,71 @@ export default function PricingPage() {
           className="mb-16"
         >
           <h2 className="text-2xl font-bold font-['Sora'] text-center mb-8">
-            For <span className="text-gradient">Organizations</span>
+            <span className="text-gradient">Mentorlar</span> uchun
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {enterprisePlans.map((plan, i) => (
-              <div key={i} className="glass-card rounded-2xl p-6">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center">
-                    <Building className="w-6 h-6 text-violet-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">{plan.name}</h3>
-                    <p className="text-sm text-muted-foreground">{plan.description}</p>
-                  </div>
+            <div className="glass-card rounded-2xl p-6">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-emerald-400" />
                 </div>
-                <div className="text-2xl font-bold mb-4">{plan.price}</div>
-                <ul className="space-y-2 mb-6">
-                  {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm">
-                      <Check className="w-4 h-4 text-violet-400 flex-shrink-0 mt-0.5" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/contact">
-                  <Button variant="outline" className="w-full">
-                    Contact Sales
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </Link>
+                <div>
+                  <h3 className="font-semibold text-lg">Bepul to'lov</h3>
+                  <p className="text-sm text-muted-foreground">10-20% platform fee per session</p>
+                </div>
               </div>
-            ))}
+              <ul className="space-y-3 mb-6">
+                {[
+                  "Set your own hourly rate",
+                  "Flexible scheduling",
+                  "Access to motivated students",
+                  "Build your professional reputation",
+                  "Earn while giving back",
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm">
+                    <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/contact">
+                <Button className="bg-gradient-primary hover:opacity-90">
+                  Mentor bo'lish
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+            <div className="glass-card rounded-2xl p-6">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center">
+                  <HelpCircle className="w-6 h-6 text-violet-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg">Mentorlar uchun</h3>
+                  <p className="text-sm text-muted-foreground">10-20% platform fee per session</p>
+                </div>
+              </div>
+              <ul className="space-y-3 mb-6">
+                {[
+                  "Set your own hourly rate",
+                  "Flexible scheduling",
+                  "Access to motivated students",
+                  "Build your professional reputation",
+                  "Earn while giving back",
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm">
+                    <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/contact">
+                <Button className="bg-gradient-primary hover:opacity-90">
+                  Mentor bo'lish
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </motion.div>
 
@@ -274,7 +312,7 @@ export default function PricingPage() {
           className="glass-card rounded-3xl p-8 mb-16"
         >
           <h2 className="text-2xl font-bold font-['Sora'] text-center mb-8">
-            For <span className="text-gradient">Mentors</span>
+            <span className="text-gradient">Savdo</span> uchun
           </h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -303,21 +341,21 @@ export default function PricingPage() {
               </ul>
               <Link href="/contact">
                 <Button className="bg-gradient-primary hover:opacity-90">
-                  Become a Mentor
+                  Mentor bo'lish
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
             </div>
             <div className="space-y-4">
-              {testimonials.map((t, i) => (
+              {faqs.map((faq, i) => (
                 <div key={i} className="p-4 rounded-xl bg-secondary/30">
                   <div className="flex items-center gap-1 mb-2">
                     {[...Array(5)].map((_, j) => (
                       <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <p className="text-sm mb-2">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="text-xs text-muted-foreground">— {t.name}, {t.role}</div>
+                  <p className="text-sm mb-2">&ldquo;{faq.a}&rdquo;</p>
+                  <div className="text-xs text-muted-foreground">— {faq.q}</div>
                 </div>
               ))}
             </div>
@@ -330,16 +368,16 @@ export default function PricingPage() {
           transition={{ delay: 0.4 }}
           className="text-center"
         >
-          <h2 className="text-2xl font-bold font-['Sora'] mb-4">Have Questions?</h2>
+          <h2 className="text-2xl font-bold font-['Sora'] mb-4">Savdo uchun?</h2>
           <p className="text-muted-foreground mb-6">
-            Our team is here to help you choose the right plan.
+            Savdo uchun murojaat qilish
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/contact">
-              <Button variant="outline">Contact Support</Button>
+              <Button variant="outline">Murojaat qilish</Button>
             </Link>
             <Link href="/faq">
-              <Button variant="ghost">View FAQ</Button>
+              <Button variant="ghost">FAQ</Button>
             </Link>
           </div>
         </motion.div>

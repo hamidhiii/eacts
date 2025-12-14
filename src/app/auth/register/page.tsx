@@ -4,197 +4,231 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { motion } from "framer-motion";
-import {
-  Sparkles,
-  Mail,
-  Lock,
-  Eye,
-  EyeOff,
-  ArrowRight,
-  User,
-  GraduationCap,
-  Users,
-  Building,
-  Check,
-} from "lucide-react";
+import { Sparkles, Mail, Lock, User, ArrowRight, CheckCircle } from "lucide-react";
 
-const userTypes = [
-  {
-    id: "student",
-    label: "Student",
-    description: "Looking for opportunities",
-    icon: GraduationCap,
-  },
-  {
-    id: "mentor",
-    label: "Mentor",
-    description: "Guide and support students",
-    icon: Users,
-  },
-  {
-    id: "organization",
-    label: "Organization",
-    description: "Post opportunities",
-    icon: Building,
-  },
+const benefits = [
+  "Shaxsiylashtirilgan imkoniyatlar tavsiyalari",
+  "AI-quvvatli karyera yo'l xaritalari",
+  "Mentorlar va mutaxassislar bilan bog'lanish",
+  "Tayyorgarlik markazlari va resurslarga kirish",
+  "Jamoadorlarni topish va hamkorlik qilish",
 ];
 
 export default function RegisterPage() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [selectedType, setSelectedType] = useState("student");
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    agreeToTerms: false,
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Register form submitted:", formData);
+  };
 
   return (
-    <div className="min-h-screen pt-16 flex items-center justify-center px-4 py-12">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl" />
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-md relative"
-      >
-        <div className="glass-card rounded-3xl p-8">
-          <div className="text-center mb-8">
-            <Link href="/" className="inline-flex items-center gap-2 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
+    <div className="min-h-screen pt-20 pb-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="order-2 lg:order-1"
+          >
+            <Link href="/" className="inline-flex items-center gap-2 mb-8 group">
+              <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-white" />
               </div>
+              <span className="text-xl font-bold font-['Sora']">E-ACTS</span>
             </Link>
-            <h1 className="text-2xl font-bold font-['Sora'] mb-2">Create Account</h1>
-            <p className="text-muted-foreground">Start your extracurricular journey</p>
-          </div>
 
-          <div className="mb-6">
-            <Label className="text-sm text-muted-foreground mb-3 block">I am a...</Label>
-            <div className="grid grid-cols-3 gap-2">
-              {userTypes.map((type) => (
-                <button
-                  key={type.id}
-                  onClick={() => setSelectedType(type.id)}
-                  className={`relative p-3 rounded-xl border-2 transition-all ${
-                    selectedType === type.id
-                      ? "border-emerald-500 bg-emerald-500/10"
-                      : "border-border hover:border-emerald-500/50"
-                  }`}
-                >
-                  {selectedType === type.id && (
-                    <div className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-white" />
-                    </div>
-                  )}
-                  <type.icon className={`w-6 h-6 mx-auto mb-1 ${selectedType === type.id ? "text-emerald-400" : "text-muted-foreground"}`} />
-                  <div className={`text-xs font-medium ${selectedType === type.id ? "text-foreground" : "text-muted-foreground"}`}>
-                    {type.label}
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-4 mb-6">
-            <Button variant="outline" className="w-full h-12 gap-3">
-              <svg className="w-5 h-5" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-              </svg>
-              Sign up with Google
-            </Button>
-            <Button variant="outline" className="w-full h-12 gap-3">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-              Sign up with LinkedIn
-            </Button>
-          </div>
-
-          <div className="relative mb-6">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-border"></div>
-            </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-card px-2 text-muted-foreground">Or continue with</span>
-            </div>
-          </div>
-
-          <form className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="fullName">Full Name</Label>
-              <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <Input
-                  id="fullName"
-                  type="text"
-                  placeholder="Enter your full name"
-                  className="pl-10 h-12"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="name@example.com"
-                  className="pl-10 h-12"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <Input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Create a password"
-                  className="pl-10 pr-10 h-12"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-                >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                </button>
-              </div>
-            </div>
-            <p className="text-xs text-muted-foreground">
-              By signing up, you agree to our{" "}
-              <Link href="/terms" className="text-emerald-400 hover:underline">Terms of Service</Link>
-              {" "}and{" "}
-              <Link href="/privacy" className="text-emerald-400 hover:underline">Privacy Policy</Link>
+            <h1 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
+              Hisobingizni Yarating
+            </h1>
+            <p className="text-muted-foreground mb-8">
+              Darsdan tashqari sayohatingizni boshlash va global imkoniyatlarni kashf qilish
             </p>
-            <Button className="w-full h-12 bg-gradient-primary hover:opacity-90">
-              Create Account
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </form>
 
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            Already have an account?{" "}
-            <Link href="/auth/signin" className="text-emerald-400 hover:underline font-medium">
-              Sign in
-            </Link>
-          </p>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="fullName" className="block text-sm font-medium mb-2">
+                  To'liq Ism
+                </label>
+                <div className="relative">
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    id="fullName"
+                    type="text"
+                    placeholder="Ismingiz va familiyangiz"
+                    className="pl-10 bg-secondary/30"
+                    value={formData.fullName}
+                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  E-mail Manzil
+                </label>
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="sizning@email.com"
+                    className="pl-10 bg-secondary/30"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium mb-2">
+                  Parol
+                </label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    id="password"
+                    type="password"
+                    placeholder="Kamida 8 ta belgi"
+                    className="pl-10 bg-secondary/30"
+                    value={formData.password}
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="confirmPassword" className="block text-sm font-medium mb-2">
+                  Parolni Tasdiqlash
+                </label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    id="confirmPassword"
+                    type="password"
+                    placeholder="Parolni qaytadan kiriting"
+                    className="pl-10 bg-secondary/30"
+                    value={formData.confirmPassword}
+                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2">
+                <Checkbox
+                  id="terms"
+                  checked={formData.agreeToTerms}
+                  onCheckedChange={(checked) => 
+                    setFormData({ ...formData, agreeToTerms: checked as boolean })
+                  }
+                  required
+                />
+                <label htmlFor="terms" className="text-sm text-muted-foreground leading-relaxed">
+                  Men{" "}
+                  <Link href="/terms" className="text-emerald-400 hover:underline">
+                    Foydalanish Shartlari
+                  </Link>{" "}
+                  va{" "}
+                  <Link href="/privacy" className="text-emerald-400 hover:underline">
+                    Maxfiylik Siyosati
+                  </Link>
+                  ni o'qib chiqdim va qabul qilaman
+                </label>
+              </div>
+
+              <Button
+                type="submit"
+                className="w-full bg-gradient-primary hover:opacity-90 h-12"
+                disabled={!formData.agreeToTerms}
+              >
+                Hisobni Yaratish
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+
+              <div className="text-center text-sm text-muted-foreground">
+                Allaqachon hisobingiz bormi?{" "}
+                <Link href="/auth/signin" className="text-emerald-400 hover:underline font-medium">
+                  Kirish
+                </Link>
+              </div>
+            </form>
+
+            <div className="mt-8 pt-8 border-t border-border/40">
+              <p className="text-sm text-muted-foreground text-center mb-4">
+                Yoki quyidagilar bilan davom eting
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                <Button variant="outline" className="w-full">
+                  <img src="/google-icon.svg" alt="Google" className="w-5 h-5 mr-2" />
+                  Google
+                </Button>
+                <Button variant="outline" className="w-full">
+                  <img src="/github-icon.svg" alt="GitHub" className="w-5 h-5 mr-2" />
+                  GitHub
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="order-1 lg:order-2"
+          >
+            <div className="glass-card rounded-2xl p-8 lg:p-12">
+              <h2 className="text-2xl font-bold font-['Sora'] mb-6">
+                Nima Olasiz
+              </h2>
+              <ul className="space-y-4">
+                {benefits.map((benefit, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-start gap-3"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle className="w-4 h-4 text-emerald-400" />
+                    </div>
+                    <span className="text-foreground">{benefit}</span>
+                  </motion.li>
+                ))}
+              </ul>
+
+              <div className="mt-8 pt-8 border-t border-border/40">
+                <div className="flex items-center gap-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces"
+                    alt="Student"
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="text-sm text-foreground italic mb-1">
+                      "E-ACTS o'zimning darsdan tashqari sayohatimni transformatsiya qildi. Ilgari bilmagan imkoniyatlarni topdim!"
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      - Malika U., Kompyuter Fanlari Talabasi
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
