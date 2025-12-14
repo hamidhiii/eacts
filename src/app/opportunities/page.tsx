@@ -26,15 +26,15 @@ import {
 } from "lucide-react";
 
 const categories = [
-  { id: "all", label: "All", icon: Globe, count: 48 },
-  { id: "events", label: "Events", icon: Calendar, count: 12 },
-  { id: "competitions", label: "Competitions", icon: Trophy, count: 8 },
-  { id: "hackathons", label: "Hackathons", icon: Users, count: 6 },
-  { id: "internships", label: "Internships", icon: Briefcase, count: 10 },
-  { id: "seminars", label: "Seminars", icon: Presentation, count: 5 },
-  { id: "workshops", label: "Workshops", icon: Wrench, count: 4 },
-  { id: "clubs", label: "Clubs", icon: Building, count: 7 },
-  { id: "exchange", label: "Exchange Programs", icon: GraduationCap, count: 6 },
+  { id: "all", label: "Barchasi", icon: Globe, count: 48 },
+  { id: "events", label: "Tadbirlar", icon: Calendar, count: 12 },
+  { id: "competitions", label: "Tanlovlar", icon: Trophy, count: 8 },
+  { id: "hackathons", label: "Hakatonlar", icon: Users, count: 6 },
+  { id: "internships", label: "Amaliyotlar", icon: Briefcase, count: 10 },
+  { id: "seminars", label: "Seminarlar", icon: Presentation, count: 5 },
+  { id: "workshops", label: "Ustaxonalar", icon: Wrench, count: 4 },
+  { id: "clubs", label: "Klublar", icon: Building, count: 7 },
+  { id: "exchange", label: "Almashinuv Dasturlari", icon: GraduationCap, count: 6 },
 ];
 
 const opportunities = [
@@ -43,38 +43,38 @@ const opportunities = [
     title: "Google Solution Challenge 2025",
     category: "competitions",
     organization: "Google Developer Student Clubs",
-    description: "Build a solution to address one of the United Nations' 17 Sustainable Development Goals using Google technology.",
-    deadline: "March 31, 2025",
-    location: "Online",
-    eligibility: "University students worldwide",
+    description: "Birlashgan Millatlar Tashkilotining 17 ta Barqaror Rivojlanish Maqsadlaridan birini hal qilish uchun Google texnologiyasidan foydalanib yechim yarating.",
+    deadline: "31-Mart, 2025",
+    location: "Onlayn",
+    eligibility: "Butun dunyo bo'ylab universitet talabalari",
     image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=200&fit=crop",
-    tags: ["Tech", "Social Impact", "Google"],
+    tags: ["Texnologiya", "Ijtimoiy Ta'sir", "Google"],
     featured: true,
   },
   {
     id: 2,
-    title: "Central Asian Hackathon 2025",
+    title: "Markaziy Osiyo Hakatoni 2025",
     category: "hackathons",
-    organization: "TechHub Central Asia",
-    description: "48-hour hackathon bringing together the best developers from Central Asia to solve regional challenges.",
-    deadline: "February 15, 2025",
-    location: "Tashkent, Uzbekistan",
-    eligibility: "Students and professionals",
+    organization: "TechHub Markaziy Osiyo",
+    description: "Markaziy Osiyoning eng yaxshi dasturchilari mintaqaviy muammolarni hal qilish uchun 48 soatlik hakaton.",
+    deadline: "15-Fevral, 2025",
+    location: "Toshkent, O'zbekiston",
+    eligibility: "Talabalar va mutaxassislar",
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=200&fit=crop",
-    tags: ["Hackathon", "Networking", "Prizes"],
+    tags: ["Hakaton", "Tarmoq", "Mukofotlar"],
     featured: true,
   },
   {
     id: 3,
-    title: "AIESEC Global Volunteer Program",
+    title: "AIESEC Global Ko'ngilli Dasturi",
     category: "exchange",
     organization: "AIESEC",
-    description: "Volunteer abroad and develop your leadership skills while making a positive impact on communities worldwide.",
-    deadline: "Rolling Applications",
-    location: "Multiple Countries",
-    eligibility: "18-30 years old",
+    description: "Chet elda ko'ngilli bo'ling va butun dunyo bo'ylab jamoalarga ijobiy ta'sir ko'rsatish bilan birga yetakchilik ko'nikmalaringizni rivojlantiring.",
+    deadline: "Doimiy Arizalar",
+    location: "Bir Nechta Mamlakatlar",
+    eligibility: "18-30 yoshdagilar",
     image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=200&fit=crop",
-    tags: ["Volunteer", "International", "Leadership"],
+    tags: ["Ko'ngilli", "Xalqaro", "Yetakchilik"],
     featured: false,
   },
   {
@@ -82,77 +82,77 @@ const opportunities = [
     title: "Microsoft Imagine Cup",
     category: "competitions",
     organization: "Microsoft",
-    description: "Global technology competition empowering students to use their creativity and passion for technology.",
-    deadline: "April 15, 2025",
-    location: "Online + Finals in Seattle",
-    eligibility: "Students 16+",
+    description: "Talabalarga ijodkorliklari va texnologiyaga bo'lgan ishtiyoqlaridan foydalanishga imkon beruvchi global texnologiya tanlovi.",
+    deadline: "15-Aprel, 2025",
+    location: "Onlayn + Final Siettlda",
+    eligibility: "16+ yoshdagi talabalar",
     image: "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?w=400&h=200&fit=crop",
-    tags: ["Tech", "Innovation", "Microsoft"],
+    tags: ["Texnologiya", "Innovatsiya", "Microsoft"],
     featured: true,
   },
   {
     id: 5,
-    title: "Data Science Summer Internship",
+    title: "Ma'lumotlar Fanlari Bo'yicha Yozgi Amaliyot",
     category: "internships",
-    organization: "Huawei Uzbekistan",
-    description: "3-month paid internship program for aspiring data scientists. Work on real-world projects with industry experts.",
-    deadline: "January 31, 2025",
-    location: "Tashkent, Uzbekistan",
-    eligibility: "3rd-4th year CS students",
+    organization: "Huawei O'zbekiston",
+    description: "Aspirant ma'lumotlar olimlari uchun 3 oylik pullik amaliyot dasturi. Sanoat mutaxassislari bilan real loyihalar ustida ishlang.",
+    deadline: "31-Yanvar, 2025",
+    location: "Toshkent, O'zbekiston",
+    eligibility: "3-4 kurs KI talabalari",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop",
-    tags: ["Data Science", "Paid", "Mentorship"],
+    tags: ["Ma'lumotlar Fanlari", "Pullik", "Mentorlik"],
     featured: false,
   },
   {
     id: 6,
-    title: "AI & Machine Learning Workshop",
+    title: "AI va Mashinali O'rganish Ustaxonasi",
     category: "workshops",
-    organization: "IT Park Uzbekistan",
-    description: "Intensive 2-day workshop on practical AI and ML applications. Hands-on projects with industry mentors.",
-    deadline: "February 5, 2025",
-    location: "IT Park, Tashkent",
-    eligibility: "Intermediate programmers",
+    organization: "IT Park O'zbekiston",
+    description: "Amaliy AI va ML ilovalariga bag'ishlangan intensiv 2 kunlik ustaxona. Sanoat mentorlari bilan amaliy loyihalar.",
+    deadline: "5-Fevral, 2025",
+    location: "IT Park, Toshkent",
+    eligibility: "O'rta darajadagi dasturchilar",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop",
-    tags: ["AI", "Workshop", "Hands-on"],
+    tags: ["AI", "Ustaxona", "Amaliy"],
     featured: false,
   },
   {
     id: 7,
-    title: "Youth Leadership Summit 2025",
+    title: "Yoshlar Yetakchiligi Sammiti 2025",
     category: "events",
-    organization: "UN Youth",
-    description: "Annual summit bringing together young leaders to discuss global challenges and create actionable solutions.",
-    deadline: "March 1, 2025",
-    location: "Almaty, Kazakhstan",
-    eligibility: "18-25 years old",
+    organization: "BMT Yoshlari",
+    description: "Global muammolarni muhokama qilish va amaliy yechimlar yaratish uchun yosh yetakchilarni birlashtiruvchi yillik sammit.",
+    deadline: "1-Mart, 2025",
+    location: "Almati, Qozog'iston",
+    eligibility: "18-25 yoshdagilar",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=200&fit=crop",
-    tags: ["Leadership", "UN", "Networking"],
+    tags: ["Yetakchilik", "BMT", "Tarmoq"],
     featured: false,
   },
   {
     id: 8,
-    title: "GDSC Lead Applications",
+    title: "GDSC Yetakchi Arizalari",
     category: "clubs",
     organization: "Google Developer Student Clubs",
-    description: "Lead a community of student developers at your university. Organize events, workshops, and hackathons.",
-    deadline: "August 31, 2025",
-    location: "Your University",
-    eligibility: "University students",
+    description: "Universitetingizda talaba dasturchilari hamjamiyatiga yetakchilik qiling. Tadbirlar, ustaxonalar va hakatonlar tashkil qiling.",
+    deadline: "31-Avgust, 2025",
+    location: "Sizning Universitetingiz",
+    eligibility: "Universitet talabalari",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=200&fit=crop",
-    tags: ["Leadership", "Google", "Community"],
+    tags: ["Yetakchilik", "Google", "Hamjamiyat"],
     featured: false,
   },
   {
     id: 9,
-    title: "Entrepreneurship Seminar Series",
+    title: "Tadbirkorlik Seminar Seriyasi",
     category: "seminars",
-    organization: "Startup Grind Tashkent",
-    description: "Weekly seminars featuring successful entrepreneurs sharing their journey and insights.",
-    deadline: "Open Registration",
-    location: "Hybrid",
-    eligibility: "Anyone interested",
+    organization: "Startup Grind Toshkent",
+    description: "Muvaffaqiyatli tadbirkorlar o'z sayohatlari va tushunchalarini baham ko'rishuvchi haftalik seminarlar.",
+    deadline: "Ochiq Ro'yxatdan O'tish",
+    location: "Gibrid",
+    eligibility: "Qiziquvchilar hamma",
     image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=200&fit=crop",
-    tags: ["Startup", "Mentorship", "Free"],
+    tags: ["Startap", "Mentorlik", "Bepul"],
     featured: false,
   },
 ];
@@ -196,10 +196,10 @@ export default function OpportunitiesPage() {
           className="text-center mb-12"
         >
           <h1 className="text-4xl sm:text-5xl font-bold font-['Sora'] mb-4">
-            All <span className="text-gradient">Opportunities</span> in One Place
+            Barcha <span className="text-gradient">Imkoniyatlar</span> Bir Joyda
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Discover events, competitions, internships, and more. Filter by category and never miss an opportunity.
+            Tadbirlar, tanlovlar, amaliyotlar va boshqalarni kashf qiling. Turkum bo'yicha filtrlang va hech qanday imkoniyatni o'tkazib yubormang.
           </p>
         </motion.div>
 
@@ -211,7 +211,7 @@ export default function OpportunitiesPage() {
         >
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <Input
-            placeholder="Search opportunities..."
+            placeholder="Imkoniyatlarni qidirish..."
             className="pl-12 h-14 text-lg bg-secondary/30 border-border/50"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -276,7 +276,7 @@ export default function OpportunitiesPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
                   {opp.featured && (
                     <div className="absolute top-3 left-3 px-2 py-1 rounded-lg bg-gradient-primary text-white text-xs font-medium">
-                      Featured
+                      Maxsus
                     </div>
                   )}
                   <div className={`absolute top-3 right-3 px-2 py-1 rounded-lg text-xs font-medium border ${categoryColors[opp.category]}`}>
@@ -304,7 +304,7 @@ export default function OpportunitiesPage() {
                   <div className="space-y-2 text-sm text-muted-foreground mb-4">
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4 text-emerald-400" />
-                      <span>Deadline: {opp.deadline}</span>
+                      <span>Muddat: {opp.deadline}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-emerald-400" />
@@ -318,7 +318,7 @@ export default function OpportunitiesPage() {
 
                   <div className="flex items-center gap-2">
                     <Button className="flex-1 bg-gradient-primary hover:opacity-90" size="sm">
-                      Apply Now
+                      Ariza Topshirish
                       <ExternalLink className="w-4 h-4 ml-1" />
                     </Button>
                     <Button
@@ -348,8 +348,8 @@ export default function OpportunitiesPage() {
             <div className="w-20 h-20 rounded-full bg-secondary/50 flex items-center justify-center mx-auto mb-4">
               <Search className="w-8 h-8 text-muted-foreground" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">No opportunities found</h3>
-            <p className="text-muted-foreground">Try adjusting your search or filter criteria</p>
+            <h3 className="text-xl font-semibold mb-2">Imkoniyatlar topilmadi</h3>
+            <p className="text-muted-foreground">Qidiruv yoki filtr mezonlaringizni sozlashga harakat qiling</p>
           </motion.div>
         )}
       </div>

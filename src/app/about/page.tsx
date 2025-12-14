@@ -1,246 +1,228 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import {
-  Sparkles,
-  Target,
-  Eye,
-  Users,
-  TrendingUp,
-  Award,
-  Globe,
-  Heart,
-  ArrowRight,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
-
-const stats = [
-  { value: "10K+", label: "Active Students" },
-  { value: "500+", label: "Opportunities Posted" },
-  { value: "50+", label: "Partner Organizations" },
-  { value: "85%", label: "Employment Rate" },
-];
-
-const team = [
-  {
-    name: "Jasur Yusupov",
-    role: "Founder & CEO",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=faces",
-    bio: "Former Google intern, passionate about empowering Central Asian youth.",
-  },
-  {
-    name: "Malika Karimova",
-    role: "Head of Product",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=faces",
-    bio: "Ex-Microsoft PM, building products that matter for students.",
-  },
-  {
-    name: "Bobur Alimov",
-    role: "Head of Engineering",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=faces",
-    bio: "Full-stack developer with a passion for scalable systems.",
-  },
-  {
-    name: "Dilnoza Azimova",
-    role: "Head of Partnerships",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=faces",
-    bio: "Building bridges between students and global organizations.",
-  },
-];
-
-const partners = [
-  "Google", "Microsoft", "Huawei", "AIESEC", "UN Youth", "Samsung",
-  "IT Park", "Westminster University", "Inha University", "KPMG"
-];
+import { Users, Target, Heart, TrendingUp, Award, Globe2, Zap, Sparkles } from "lucide-react";
 
 const values = [
   {
     icon: Target,
-    title: "Student-First",
-    description: "Every decision we make puts students' success at the center.",
-  },
-  {
-    icon: Globe,
-    title: "Global Access",
-    description: "Breaking barriers to bring world-class opportunities to Central Asia.",
+    title: "Maqsad Asosida",
+    description: "Biz har bir talaba o'zining noyob maqsadlariga erishishiga ishonishimiz va ularning shaxsiy yo'llarini qo'llab-quvvatlaymiz.",
   },
   {
     icon: Heart,
-    title: "Community Driven",
-    description: "Building a supportive ecosystem where students help each other grow.",
+    title: "Talabalar Birinchi",
+    description: "Biz qabul qilgan har bir qaror talabalarimizning ehtiyojlari va muvaffaqiyatidan kelib chiqadi.",
   },
   {
     icon: TrendingUp,
-    title: "Impact Focused",
-    description: "Measuring success by the real-world outcomes we create for youth.",
+    title: "Uzluksiz Yaxshilanish",
+    description: "Biz doimiy ravishda o'rganamiz va rivojlanamiz, har doim platformamizni yaxshilash yo'llarini qidiramiz.",
   },
+  {
+    icon: Globe2,
+    title: "Inklyuzivlik",
+    description: "Biz o'z orqaga mansubligi va imkoniyatlaridan qat'i nazar har bir talaba uchun imkoniyatlarni ochish uchun ishlashimiz.",
+  },
+];
+
+const stats = [
+  { value: "2024", label: "Tashkil Etilgan" },
+  { value: "10K+", label: "Faol Talabalar" },
+  { value: "500+", label: "Imkoniyatlar Ro'yxatga olingan" },
+  { value: "50+", label: "Hamkorliklar" },
+];
+
+const team = [
+  {
+    name: "Sarah Kim",
+    role: "Asoschi va Bosh Direktor",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=faces",
+    bio: "Texnologiya bilan ta'limni birlashtirishga ishtiyoqli.",
+  },
+  {
+    name: "Michael Chen",
+    role: "Texnologiya Direktori",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=faces",
+    bio: "AI va mashinali o'qitish mutaxassisi.",
+  },
+  {
+    name: "Emily Rodriguez",
+    role: "Talabalar Bilan Ishlash Bo'limi Boshlig'i",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=faces",
+    bio: "Talaba rivojlanishiga bag'ishlangan.",
+  },
+];
+
+const milestones = [
+  { year: "2024", event: "E-ACTS tashkil etildi" },
+  { year: "2024", event: "Birinchi 1000 ta foydalanuvchiga erishildi" },
+  { year: "2024", event: "Yetakchi tashkilotlar bilan hamkorlik boshlandi" },
+  { year: "2025", event: "AI shaxsiylashtirilgan yo'l xaritalari ishga tushirildi" },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen pt-20 pb-16">
+    <div className="min-h-screen">
+      <section className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/5 to-transparent" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
+              Bizning Missiyamiz
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
+              E-ACTS Markaziy Osiyo talabalariga imkoniyatlarni kashf qilish, global tanlovlarga tayyorgarlik ko'rish 
+              va karyera yo'llarini yaratish uchun to'liq platformani taqdim etish orqali kuchga aylantirish uchun tashkil etilgan. 
+              Biz har bir talaba maxsus imkoniyatlarni topish va o'z potentsialiga erishishga haqli ekanligiga ishonishimiz.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="glass-card rounded-2xl p-6 text-center"
+              >
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mx-auto mb-4">
+                  <value.icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{value.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {value.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
+              Raqamlardagi Ta'sir
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Sayohatingizga qo'shiling va farq yarating
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="glass-card rounded-2xl p-6 text-center"
+              >
+                <div className="text-4xl font-bold text-gradient mb-2">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
+              Bizning Jamoamizni Tanishing
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Talabalar uchun imkoniyatlarni ochishga bag'ishlangan maxsus jamoachi
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {team.map((member, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="glass-card rounded-2xl p-6 text-center"
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                />
+                <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
+                <div className="text-emerald-400 text-sm mb-3">{member.role}</div>
+                <p className="text-muted-foreground text-sm">{member.bio}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
+              Bizning Sayohatimiz
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Fikirdan dunyoni o'zgartiruvchi platformagacha
+            </p>
+          </motion.div>
+
+          <div className="space-y-6">
+            {milestones.map((milestone, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="glass-card rounded-xl p-6 flex items-center gap-6"
+              >
+                <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl font-bold text-white">{milestone.year}</span>
+                </div>
+                <div>
+                  <p className="text-lg font-medium">{milestone.event}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4" />
-            <span>About E-ACTS</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-bold font-['Sora'] mb-6">
-            Empowering the Next Generation of{" "}
-            <span className="text-gradient">Central Asian Leaders</span>
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            We believe every student deserves access to world-class opportunities, 
-            mentorship, and guidance to build successful careers.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-        >
-          {stats.map((stat, i) => (
-            <div key={i} className="glass-card rounded-2xl p-6 text-center">
-              <div className="text-3xl font-bold text-gradient mb-1">{stat.value}</div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="glass-card rounded-2xl p-8"
-          >
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
-              <Target className="w-6 h-6 text-emerald-400" />
-            </div>
-            <h2 className="text-2xl font-bold font-['Sora'] mb-4">Our Mission</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              To democratize access to extracurricular opportunities for students in Central Asia 
-              and beyond. We connect ambitious young people with competitions, internships, 
-              mentorship programs, and global events that accelerate their personal and 
-              professional growth.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="glass-card rounded-2xl p-8"
-          >
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
-              <Eye className="w-6 h-6 text-emerald-400" />
-            </div>
-            <h2 className="text-2xl font-bold font-['Sora'] mb-4">Our Vision</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              A world where geography doesn't determine opportunity. We envision Central Asian 
-              students competing and winning at the highest global stages, founding successful 
-              companies, and leading international organizations—all powered by the foundations 
-              they build through E-ACTS.
-            </p>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mb-16"
-        >
-          <h2 className="text-2xl font-bold font-['Sora'] text-center mb-8">Our Values</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, i) => (
-              <div key={i} className="glass-card rounded-2xl p-6 text-center">
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="w-6 h-6 text-emerald-400" />
-                </div>
-                <h3 className="font-semibold mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="glass-card rounded-3xl p-8 mb-16"
-        >
-          <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-4">
-              <TrendingUp className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-2xl font-bold font-['Sora'] mb-2">Impact on Youth Employment</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              We're not just about activities—we're about outcomes. Our platform helps students 
-              build the experience and networks they need to succeed in their careers.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-4">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">85%</div>
-              <p className="text-sm text-muted-foreground">of active users land internships or jobs within 6 months</p>
-            </div>
-            <div className="text-center p-4">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">3x</div>
-              <p className="text-sm text-muted-foreground">higher interview success rate for E-ACTS members</p>
-            </div>
-            <div className="text-center p-4">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">150+</div>
-              <p className="text-sm text-muted-foreground">competition wins by our community members</p>
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mb-16"
-        >
-          <h2 className="text-2xl font-bold font-['Sora'] text-center mb-8">Meet Our Team</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member, i) => (
-              <div key={i} className="glass-card rounded-2xl p-6 text-center">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-20 h-20 rounded-2xl object-cover mx-auto mb-4"
-                />
-                <h3 className="font-semibold mb-1">{member.name}</h3>
-                <p className="text-sm text-emerald-400 mb-2">{member.role}</p>
-                <p className="text-xs text-muted-foreground mb-3">{member.bio}</p>
-                <div className="flex justify-center gap-2">
-                  <button className="p-2 rounded-lg hover:bg-secondary/50 transition-colors text-muted-foreground hover:text-foreground">
-                    <Linkedin className="w-4 h-4" />
-                  </button>
-                  <button className="p-2 rounded-lg hover:bg-secondary/50 transition-colors text-muted-foreground hover:text-foreground">
-                    <Twitter className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
           className="text-center mb-16"
         >
           <h2 className="text-2xl font-bold font-['Sora'] mb-8">Our Partners</h2>
