@@ -7,12 +7,12 @@ import { Menu, X, Sparkles, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "/opportunities", label: "Opportunities" },
-  { href: "/search", label: "Search" },
-  { href: "/roadmap", label: "Roadmap" },
-  { href: "/prep-hub", label: "Prep Hub" },
-  { href: "/community", label: "Community" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/opportunities", label: "Imkoniyatlar" },
+  { href: "/search", label: "Qidiruv" },
+  { href: "/roadmap", label: "Yo'l Xaritasi" },
+  { href: "/prep-hub", label: "Tayyorgarlik Markazlari" },
+  { href: "/community", label: "Hamjamiyat" },
+  { href: "/pricing", label: "Narxlar" },
 ];
 
 export function Navbar() {
@@ -47,12 +47,12 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <Link href="/auth/signin">
               <Button variant="ghost" size="sm">
-                Sign In
+                Kirish
               </Button>
             </Link>
             <Link href="/auth/register">
               <Button size="sm" className="bg-gradient-primary hover:opacity-90 transition-opacity">
-                Get Started
+                Boshlash
               </Button>
             </Link>
           </div>
@@ -88,12 +88,12 @@ export function Navbar() {
               <div className="pt-4 flex flex-col gap-2">
                 <Link href="/auth/signin" onClick={() => setIsOpen(false)}>
                   <Button variant="outline" className="w-full">
-                    Sign In
+                    Kirish
                   </Button>
                 </Link>
                 <Link href="/auth/register" onClick={() => setIsOpen(false)}>
                   <Button className="w-full bg-gradient-primary hover:opacity-90">
-                    Get Started
+                    Boshlash
                   </Button>
                 </Link>
               </div>

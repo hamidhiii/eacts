@@ -3,22 +3,22 @@ import { Sparkles, Mail, MapPin, Phone } from "lucide-react";
 
 const footerLinks = {
   platform: [
-    { href: "/opportunities", label: "Opportunities" },
-    { href: "/search", label: "Search" },
-    { href: "/roadmap", label: "Roadmap" },
-    { href: "/prep-hub", label: "Prep Hub" },
-    { href: "/community", label: "Community" },
+    { href: "/opportunities", label: "Imkoniyatlar" },
+    { href: "/search", label: "Qidiruv" },
+    { href: "/roadmap", label: "Yo'l Xaritasi" },
+    { href: "/prep-hub", label: "Tayyorgarlik Markazlari" },
+    { href: "/community", label: "Hamjamiyat" },
   ],
   company: [
-    { href: "/about", label: "About Us" },
-    { href: "/contact", label: "Contact" },
-    { href: "/pricing", label: "Pricing" },
-    { href: "/careers", label: "Careers" },
+    { href: "/about", label: "Biz Haqimizda" },
+    { href: "/contact", label: "Aloqa" },
+    { href: "/pricing", label: "Narxlar" },
+    { href: "/careers", label: "Karyera" },
   ],
   legal: [
-    { href: "/privacy", label: "Privacy Policy" },
-    { href: "/terms", label: "Terms of Service" },
-    { href: "/faq", label: "FAQ" },
+    { href: "/privacy", label: "Maxfiylik Siyosati" },
+    { href: "/terms", label: "Foydalanish Shartlari" },
+    { href: "/faq", label: "Savol-Javoblar" },
   ],
 };
 
@@ -35,8 +35,8 @@ export function Footer() {
               <span className="text-xl font-bold font-['Sora']">E-ACTS</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
-              Empowering students to discover opportunities, build personalized roadmaps, 
-              and prepare for global competitions with mentor guidance.
+              Talabalarga imkoniyatlarni kashf qilish, shaxsiylashtirilgan yo'l xaritalarini yaratish va 
+              mentor rahbarligi bilan global tanlovlarga tayyorlanish imkonini beradi.
             </p>
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
@@ -45,13 +45,13 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                <span>Tashkent, Uzbekistan</span>
+                <span>Toshkent, O'zbekiston</span>
               </div>
             </div>
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm mb-4">Platform</h4>
+            <h4 className="font-semibold text-sm mb-4">Platforma</h4>
             <ul className="space-y-3">
               {footerLinks.platform.map((link) => (
                 <li key={link.href}>
@@ -67,7 +67,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm mb-4">Company</h4>
+            <h4 className="font-semibold text-sm mb-4">Kompaniya</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
@@ -83,7 +83,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm mb-4">Legal</h4>
+            <h4 className="font-semibold text-sm mb-4">Huquqiy</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.href}>
@@ -101,7 +101,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} E-ACTS. All rights reserved.
+            © {new Date().getFullYear()} E-ACTS. Barcha huquqlar himoyalangan.
           </p>
           <div className="flex items-center gap-4">
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
