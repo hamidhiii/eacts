@@ -25,26 +25,26 @@ import {
 const features = [
   {
     icon: Bell,
-    title: "Smart Announcements",
-    description: "Never miss an opportunity. Get personalized alerts for events, competitions, internships, and more.",
+    title: "Aqlli Xabarnomalar",
+    description: "Hech qanday imkoniyatni o'tkazib yubormang. Tadbirlar, tanlovlar, amaliyotlar va boshqalar haqida shaxsiylashtirilgan ogohlantirishlarni oling.",
     color: "from-emerald-500 to-teal-500",
   },
   {
     icon: Map,
-    title: "Personalized Roadmaps",
-    description: "AI-powered career paths tailored to your goals, interests, and current skill level.",
+    title: "Shaxsiylashtirilgan Yo'l Xaritalari",
+    description: "Maqsadlaringiz, qiziqishlaringiz va hozirgi ko'nikmalaringizga moslashtirilgan AI-quvvatli karyera yo'llari.",
     color: "from-cyan-500 to-blue-500",
   },
   {
     icon: BookOpen,
-    title: "Prep Hubs",
-    description: "Join preparation groups for international competitions with mentor guidance and resources.",
+    title: "Tayyorgarlik Markazlari",
+    description: "Mentor rahbarligi va resurslar bilan xalqaro tanlovlarga tayyorgarlik guruhlariga qo'shiling.",
     color: "from-violet-500 to-purple-500",
   },
   {
     icon: Users,
-    title: "Team Matching",
-    description: "Find teammates for hackathons, projects, and competitions based on complementary skills.",
+    title: "Jamoa Moslashtirish",
+    description: "Hakatonlar, loyihalar va tanlovlar uchun qo'shimcha ko'nikmalarga ega jamoadorlarni toping.",
     color: "from-orange-500 to-amber-500",
   },
 ];
@@ -52,39 +52,39 @@ const features = [
 const steps = [
   {
     number: "01",
-    title: "Create Your Profile",
-    description: "Sign up and tell us about your interests, goals, and academic background.",
+    title: "Profilingizni Yarating",
+    description: "Ro'yxatdan o'ting va qiziqishlaringiz, maqsadlaringiz va ta'lim foniningiz haqida bizga ayting.",
   },
   {
     number: "02",
-    title: "Get Personalized Recommendations",
-    description: "Our AI analyzes your profile and suggests relevant opportunities and roadmaps.",
+    title: "Shaxsiylashtirilgan Tavsiyalar Oling",
+    description: "AI sizning profilingizni tahlil qiladi va tegishli imkoniyatlar va yo'l xaritalarini taklif qiladi.",
   },
   {
     number: "03",
-    title: "Connect & Grow",
-    description: "Join prep hubs, connect with mentors, and start your extracurricular journey.",
+    title: "Bog'laning va O'sib Boring",
+    description: "Tayyorgarlik markazlariga qo'shiling, mentorlar bilan bog'laning va darsdan tashqari sayohatingizni boshlang.",
   },
 ];
 
 const testimonials = [
   {
     name: "Dilshod Karimov",
-    role: "Software Engineering Student",
+    role: "Dasturiy Ta'minot Muhandisligi Talabasi",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces",
-    quote: "E-ACTS helped me discover Google Solution Challenge and guided me through the entire preparation process. Now I'm a global finalist!",
+    quote: "E-ACTS menga Google Solution Challenge-ni kashf qilishga yordam berdi va butun tayyorgarlik jarayonida yo'l ko'rsatdi. Endi men global finalchiman!",
   },
   {
     name: "Malika Umarova",
-    role: "Business Administration",
+    role: "Biznes Boshqaruvi",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces",
-    quote: "The roadmap feature showed me exactly what steps to take for my consulting career. I landed my dream internship thanks to E-ACTS.",
+    quote: "Yo'l xaritasi funksiyasi konsalting karyeramga erishish uchun qanday qadamlar qo'yish kerakligini aniq ko'rsatdi. E-ACTS tufayli orzuimdagi amaliyotga ega bo'ldim.",
   },
   {
     name: "Jasur Alimov",
-    role: "Data Science Student",
+    role: "Ma'lumotlar Fanlari Talabasi",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces",
-    quote: "Found my hackathon team through E-ACTS. We went on to win first place at the Central Asian Datathon!",
+    quote: "E-ACTS orqali hakaton jamoamni topdim. Markaziy Osiyo Datathon-da birinchi o'rinni egallashimizga erishdik!",
   },
 ];
 
@@ -96,29 +96,29 @@ const partners = [
 ];
 
 const stats = [
-  { value: "10K+", label: "Active Students" },
-  { value: "500+", label: "Opportunities" },
-  { value: "50+", label: "Partner Organizations" },
-  { value: "95%", label: "Success Rate" },
+  { value: "10K+", label: "Faol Talabalar" },
+  { value: "500+", label: "Imkoniyatlar" },
+  { value: "50+", label: "Hamkor Tashkilotlar" },
+  { value: "95%", label: "Muvaffaqiyat Darajasi" },
 ];
 
 const upcomingEvents = [
   {
     title: "Google Solution Challenge 2025",
-    date: "Jan 15 - Mar 31, 2025",
-    type: "Competition",
+    date: "15-Yan - 31-Mar, 2025",
+    type: "Tanlov",
     color: "bg-emerald-500/10 text-emerald-500",
   },
   {
-    title: "Central Asian Hackathon",
-    date: "Feb 20-22, 2025",
-    type: "Hackathon",
+    title: "Markaziy Osiyo Hakatoni",
+    date: "20-22-Fev, 2025",
+    type: "Hakaton",
     color: "bg-cyan-500/10 text-cyan-500",
   },
   {
-    title: "AIESEC Exchange Program",
-    date: "Applications Open",
-    type: "Exchange",
+    title: "AIESEC Almashinuv Dasturi",
+    date: "Arizalar Ochiq",
+    type: "Almashinuv",
     color: "bg-violet-500/10 text-violet-500",
   },
 ];
@@ -142,32 +142,32 @@ export default function HomePage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-8">
               <Sparkles className="w-4 h-4" />
-              <span>Your Extracurricular Journey Starts Here</span>
+              <span>Sizning Darsdan Tashqari Sayohatingiz Shu Yerdan Boshlanadi</span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-['Sora'] leading-tight mb-6">
-              Build Your{" "}
-              <span className="text-gradient">Extracurricular</span>
+              E-ACTS Bilan{" "}
+              <span className="text-gradient">Darsdan Tashqari</span>
               <br />
-              Journey with E-ACTS
+              Sayohatingizni Quring
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              Discover opportunities, create personalized roadmaps, and prepare for global 
-              competitions—all in one platform designed for ambitious students.
+              Imkoniyatlarni kashf qiling, shaxsiylashtirilgan yo'l xaritalarini yarating va global 
+              tanlovlarga tayyorlaning—barchasini ambitsiyali talabalar uchun mo'ljallangan bitta platformada.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
               <Link href="/opportunities">
                 <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8 h-14 glow-green">
-                  Explore Opportunities
+                  Imkoniyatlarni O'rganing
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link href="/roadmap">
                 <Button size="lg" variant="outline" className="text-lg px-8 h-14 border-border/60 hover:bg-secondary/50">
                   <Map className="mr-2 w-5 h-5" />
-                  Build Your Roadmap
+                  Yo'l Xaritangizni Quring
                 </Button>
               </Link>
             </div>
@@ -208,11 +208,11 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
-              The Problem We Solve
+              Biz Hal Qilayotgan Muammo
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Students miss 70% of opportunities because information is scattered across 
-              multiple platforms. E-ACTS brings everything together.
+              Talabalar 70% imkoniyatlarni o'tkazib yuborishadi, chunki ma'lumotlar bir nechta 
+              platformalarda tarqalgan. E-ACTS hamma narsani bir joyga jamlaydi.
             </p>
           </motion.div>
 
@@ -227,15 +227,15 @@ export default function HomePage() {
                 <div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">
                   <Target className="w-4 h-4" />
                 </div>
-                Without E-ACTS
+                E-ACTS-siz
               </h3>
               <ul className="space-y-4">
                 {[
-                  "Missed deadlines for competitions",
-                  "No clear path to achieve goals",
-                  "Overwhelmed by scattered information",
-                  "Struggling to find teammates",
-                  "No mentor guidance",
+                  "Tanlovlar muddatlarini o'tkazib yuborish",
+                  "Maqsadlarga erishish uchun aniq yo'l yo'q",
+                  "Tarqalgan ma'lumotlardan hayajonlanish",
+                  "Jamoadorlarni topishda qiyinchilik",
+                  "Mentor rahbarligi yo'q",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-muted-foreground">
                     <div className="w-5 h-5 rounded-full bg-red-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -257,15 +257,15 @@ export default function HomePage() {
                 <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
                   <Rocket className="w-4 h-4" />
                 </div>
-                With E-ACTS
+                E-ACTS Bilan
               </h3>
               <ul className="space-y-4">
                 {[
-                  "Smart alerts for every opportunity",
-                  "AI-powered personalized roadmaps",
-                  "All information in one place",
-                  "Team matching for competitions",
-                  "Connect with experienced mentors",
+                  "Har bir imkoniyat uchun aqlli ogohlantirishlar",
+                  "AI-quvvatli shaxsiylashtirilgan yo'l xaritalari",
+                  "Barcha ma'lumotlar bir joyda",
+                  "Tanlovlar uchun jamoa moslashtirish",
+                  "Tajribali mentorlar bilan bog'lanish",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-foreground">
                     <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -290,10 +290,10 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
-              Everything You Need to Succeed
+              Muvaffaqiyatga Erishish Uchun Kerak Bo'lgan Hamma Narsa
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Powerful features designed to accelerate your extracurricular journey
+              Darsdan tashqari sayohatingizni tezlashtirish uchun mo'ljallangan kuchli xususiyatlar
             </p>
           </motion.div>
 
@@ -329,10 +329,10 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
-              How It Works
+              Qanday Ishlaydi
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Get started in minutes and begin your journey to success
+              Bir necha daqiqada boshlang va muvaffaqiyat yo'liga tushing
             </p>
           </motion.div>
 
@@ -372,10 +372,10 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
-              Success Stories
+              Muvaffaqiyat Hikoyalari
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Join thousands of students who transformed their careers with E-ACTS
+              E-ACTS yordamida karyerasini o'zgartirgan minglab talabalarga qo'shiling
             </p>
           </motion.div>
 
@@ -423,10 +423,10 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
-                Upcoming Events & Competitions
+                Yaqinlashib Kelayotgan Tadbirlar va Tanlovlar
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Stay ahead with the latest opportunities. Never miss a deadline again.
+                Eng so'nggi imkoniyatlardan xabardor bo'ling. Hech qachon muddatni o'tkazib yubormang.
               </p>
               <div className="space-y-4">
                 {upcomingEvents.map((event, i) => (
@@ -450,7 +450,7 @@ export default function HomePage() {
               </div>
               <Link href="/opportunities">
                 <Button variant="outline" className="mt-6">
-                  View All Opportunities
+                  Barcha Imkoniyatlarni Ko'rish
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
@@ -466,18 +466,18 @@ export default function HomePage() {
                 <div className="w-20 h-20 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6">
                   <Globe className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">Global Reach</h3>
+                <h3 className="text-2xl font-bold mb-2">Global Qamrov</h3>
                 <p className="text-muted-foreground mb-6">
-                  Access opportunities from around the world, curated for Central Asian students
+                  Markaziy Osiyo talabalari uchun tanlangan butun dunyo bo'ylab imkoniyatlarga ega bo'ling
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="p-4 rounded-xl bg-secondary/30">
                     <div className="text-2xl font-bold text-gradient">25+</div>
-                    <div className="text-xs text-muted-foreground">Countries</div>
+                    <div className="text-xs text-muted-foreground">Mamlakatlar</div>
                   </div>
                   <div className="p-4 rounded-xl bg-secondary/30">
                     <div className="text-2xl font-bold text-gradient">100+</div>
-                    <div className="text-xs text-muted-foreground">Universities</div>
+                    <div className="text-xs text-muted-foreground">Universitetlar</div>
                   </div>
                 </div>
               </div>
@@ -497,10 +497,10 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
-              Trusted Partners
+              Ishonchli Hamkorlar
             </h2>
             <p className="text-muted-foreground text-lg">
-              We collaborate with leading organizations to bring you the best opportunities
+              Eng yaxshi imkoniyatlarni taqdim etish uchun yetakchi tashkilotlar bilan hamkorlik qilamiz
             </p>
           </motion.div>
 
@@ -533,21 +533,21 @@ export default function HomePage() {
             <div className="relative">
               <Zap className="w-12 h-12 text-emerald-400 mx-auto mb-6" />
               <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
-                Ready to Start Your Journey?
+                Sayohatingizni Boshlashga Tayyormisiz?
               </h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-                Join thousands of ambitious students already using E-ACTS to achieve their goals.
+                Maqsadlariga erishish uchun allaqachon E-ACTS-dan foydalanadigan minglab ambitsiyali talabalarga qo'shiling.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="/auth/register">
                   <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8 h-14">
-                    Get Started for Free
+                    Bepul Boshlang
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
                 <Link href="/pricing">
                   <Button size="lg" variant="outline" className="text-lg px-8 h-14">
-                    View Pricing
+                    Narxlarni Ko'rish
                   </Button>
                 </Link>
               </div>
