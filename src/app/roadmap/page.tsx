@@ -10,14 +10,11 @@ import {
   Code,
   Lightbulb,
   Trophy,
-  Users,
   ArrowRight,
   Check,
   Sparkles,
-  BookOpen,
   Target,
   TrendingUp,
-  Award,
   Zap,
   Clock,
 } from "lucide-react";
@@ -25,7 +22,7 @@ import {
 const goals = [
   {
     id: "software-engineer",
-    title: "Dasturiy Ta'minot Muhandisi",
+    title: "Dasturiy Ta&apos;minot Muhandisi",
     icon: Code,
     color: "from-cyan-500 to-blue-500",
     description: "Katta texnologiya kompaniyalarida ishlash uchun texnik ko'nikmalarni rivojlantiring",
@@ -35,7 +32,7 @@ const goals = [
     title: "Tadbirkor",
     icon: Lightbulb,
     color: "from-amber-500 to-orange-500",
-    description: "O'z startapingizni yarating va biznes ko'nikmalarini rivojlantiring",
+    description: "O&apos;z startapingizni yarating va biznes ko&apos;nikmalarini rivojlantiring",
   },
   {
     id: "researcher",
@@ -55,8 +52,8 @@ const goals = [
 
 const roadmaps = {
   "software-engineer": {
-    title: "Dasturiy Ta'minot Muhandisi Yo'l Xaritasi",
-    description: "FAANG va yetakchi texnologiya kompaniyalarida o'rningizni topish uchun asosiy ko'nikmalarni rivojlantiring",
+    title: "Dasturiy Ta&apos;minot Muhandisi Yo&apos;l Xaritasi",
+    description: "FAANG va yetakchi texnologiya kompaniyalarida o&apos;rningizni topish uchun asosiy ko&apos;nikmalarni rivojlantiring",
     timeline: "2-3 yil",
     phases: [
       {
@@ -92,7 +89,7 @@ const roadmaps = {
     ],
     opportunities: [
       "Google Solution Challenge",
-      "Dasturiy Ta'minot Muhandisligi Amaliyotlari",
+      "Dasturiy Ta&apos;minot Muhandisligi Amaliyotlari",
       "Hakaton va Dasturlash Tanlovlari",
       "GDSC Yetakchilik Ro'llari",
     ],
@@ -275,14 +272,14 @@ export default function RoadmapPage() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4" />
-            <span>AI-Quvvatli Shaxsiylashtirilgan Yo'l Xaritalari</span>
+            <span>AI-Quvvatli Shaxsiylashtirilgan Yo&apos;l Xaritalari</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold font-['Sora'] mb-4">
-            Sizning Karyera <span className="text-gradient">Yo'l Xaritangiz</span>
+            Sizning Karyera <span className="text-gradient">Yo&apos;l Xaritangiz</span>
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Maqsadingizni tanlang va muvaffaqiyatga erishish uchun qadamma-qadam yo'lingizni oling.
-            Qiziqishlaringiz va ko'nikmalaringizga moslashtirilgan.
+            Maqsadingizni tanlang va muvaffaqiyatga erishish uchun qadamma-qadam yo&apos;lingizni oling.
+            Qiziqishlaringiz va ko&apos;nikmalaringizga moslashtirilgan.
           </p>
         </motion.div>
 
@@ -305,7 +302,7 @@ export default function RoadmapPage() {
                   {goal.description}
                 </p>
                 <div className="flex items-center text-emerald-400 text-sm font-medium">
-                  Yo'l Xaritasini Ko'rish
+                  Yo&apos;l Xaritasini Ko&apos;rish
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>
               </motion.div>
@@ -358,7 +355,7 @@ export default function RoadmapPage() {
                 <div className="lg:col-span-2 space-y-6">
                   <h3 className="text-2xl font-bold font-['Sora'] flex items-center gap-2">
                     <TrendingUp className="w-6 h-6 text-emerald-400" />
-                    Yo'l Xaritasi Bosqichlari
+                    Yo&apos;l Xaritasi Bosqichlari
                   </h3>
 
                   {selectedRoadmap?.phases.map((phase, i) => (
@@ -405,7 +402,7 @@ export default function RoadmapPage() {
                     <div className="mt-6 pt-6 border-t border-border/40">
                       <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
                         <Zap className="w-5 h-5 text-emerald-400" />
-                        Asosiy Ko'nikmalar
+                        Asosiy Ko&apos;nikmalar
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {selectedRoadmap?.skills.map((skill, i) => (

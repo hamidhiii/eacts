@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -20,7 +21,6 @@ import {
   Calendar,
   Clock,
   TrendingUp,
-  Star,
   CheckCircle,
   Circle,
 } from "lucide-react";
@@ -102,10 +102,12 @@ export default function ProfilePage() {
         >
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <div className="relative">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=faces"
                 alt="Profile"
-                className="w-24 h-24 rounded-2xl object-cover"
+                width={96}
+                height={96}
+                className="rounded-2xl object-cover"
               />
               <button className="absolute -bottom-2 -right-2 w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-white">
                 <Edit className="w-4 h-4" />
@@ -152,11 +154,10 @@ export default function ProfilePage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
-                activeTab === tab.id
-                  ? "bg-gradient-primary text-white"
-                  : "bg-secondary/50 text-muted-foreground hover:text-foreground hover:bg-secondary"
-              }`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${activeTab === tab.id
+                ? "bg-gradient-primary text-white"
+                : "bg-secondary/50 text-muted-foreground hover:text-foreground hover:bg-secondary"
+                }`}
             >
               <tab.icon className="w-4 h-4" />
               {tab.label}
@@ -265,9 +266,8 @@ export default function ProfilePage() {
                 {achievements.slice(0, 6).map((achievement, i) => (
                   <div
                     key={i}
-                    className={`p-3 rounded-xl text-center ${
-                      achievement.earned ? "bg-secondary/50" : "bg-secondary/20 opacity-50"
-                    }`}
+                    className={`p-3 rounded-xl text-center ${achievement.earned ? "bg-secondary/50" : "bg-secondary/20 opacity-50"
+                      }`}
                   >
                     <div className="text-2xl mb-1">{achievement.icon}</div>
                     <div className="text-xs font-medium truncate">{achievement.title}</div>
@@ -318,9 +318,8 @@ export default function ProfilePage() {
             <div className="space-y-4">
               {roadmapProgress.map((item, i) => (
                 <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-secondary/30">
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                    item.status === "completed" ? "bg-emerald-500/10" : item.status === "in_progress" ? "bg-amber-500/10" : "bg-secondary"
-                  }`}>
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${item.status === "completed" ? "bg-emerald-500/10" : item.status === "in_progress" ? "bg-amber-500/10" : "bg-secondary"
+                    }`}>
                     {item.status === "completed" ? (
                       <CheckCircle className="w-5 h-5 text-emerald-400" />
                     ) : item.status === "in_progress" ? (
@@ -378,9 +377,8 @@ export default function ProfilePage() {
               {achievements.map((achievement, i) => (
                 <div
                   key={i}
-                  className={`p-6 rounded-xl text-center ${
-                    achievement.earned ? "bg-secondary/50" : "bg-secondary/20 opacity-50"
-                  }`}
+                  className={`p-6 rounded-xl text-center ${achievement.earned ? "bg-secondary/50" : "bg-secondary/20 opacity-50"
+                    }`}
                 >
                   <div className="text-4xl mb-3">{achievement.icon}</div>
                   <div className="font-semibold mb-1">{achievement.title}</div>

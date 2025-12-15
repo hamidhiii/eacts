@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -56,7 +57,7 @@ export default function RegisterPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="fullName" className="block text-sm font-medium mb-2">
-                  To'liq Ism
+                  To&apos;liq Ism
                 </label>
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -130,7 +131,7 @@ export default function RegisterPage() {
                 <Checkbox
                   id="terms"
                   checked={formData.agreeToTerms}
-                  onCheckedChange={(checked) => 
+                  onCheckedChange={(checked) =>
                     setFormData({ ...formData, agreeToTerms: checked as boolean })
                   }
                   required
@@ -144,7 +145,7 @@ export default function RegisterPage() {
                   <Link href="/privacy" className="text-emerald-400 hover:underline">
                     Maxfiylik Siyosati
                   </Link>
-                  ni o'qib chiqdim va qabul qilaman
+                  ni o&apos;qib chiqdim va qabul qilaman
                 </label>
               </div>
 
@@ -171,11 +172,11 @@ export default function RegisterPage() {
               </p>
               <div className="grid grid-cols-2 gap-3">
                 <Button variant="outline" className="w-full">
-                  <img src="/google-icon.svg" alt="Google" className="w-5 h-5 mr-2" />
+                  <Image src="/google-icon.svg" alt="Google" width={20} height={20} className="mr-2" />
                   Google
                 </Button>
                 <Button variant="outline" className="w-full">
-                  <img src="/github-icon.svg" alt="GitHub" className="w-5 h-5 mr-2" />
+                  <Image src="/github-icon.svg" alt="GitHub" width={20} height={20} className="mr-2" />
                   GitHub
                 </Button>
               </div>
@@ -210,14 +211,16 @@ export default function RegisterPage() {
 
               <div className="mt-8 pt-8 border-t border-border/40">
                 <div className="flex items-center gap-4">
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces"
                     alt="Student"
-                    className="w-12 h-12 rounded-full object-cover"
+                    width={48}
+                    height={48}
+                    className="rounded-full object-cover"
                   />
                   <div>
                     <p className="text-sm text-foreground italic mb-1">
-                      "E-ACTS o'zimning darsdan tashqari sayohatimni transformatsiya qildi. Ilgari bilmagan imkoniyatlarni topdim!"
+                      &quot;E-ACTS o&apos;zimning darsdan tashqari sayohatimni transformatsiya qildi. Ilgari bilmagan imkoniyatlarni topdim!&quot;
                     </p>
                     <p className="text-xs text-muted-foreground">
                       - Malika U., Kompyuter Fanlari Talabasi

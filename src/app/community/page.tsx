@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -20,7 +21,6 @@ import {
   Pin,
   Search,
   Plus,
-  Filter,
 } from "lucide-react";
 
 const categories = [
@@ -132,11 +132,10 @@ export default function CommunityPage() {
                   <button
                     key={category.id}
                     onClick={() => setSelectedCategory(category.id)}
-                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm transition-all ${
-                      selectedCategory === category.id
+                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm transition-all ${selectedCategory === category.id
                         ? "bg-emerald-500/10 text-emerald-400"
                         : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                    }`}
+                      }`}
                   >
                     <category.icon className="w-4 h-4" />
                     {category.label}
@@ -260,10 +259,12 @@ export default function CommunityPage() {
                     </div>
                   )}
                   <div className="flex items-start gap-4">
-                    <img
+                    <Image
                       src={post.avatar}
                       alt={post.author}
-                      className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                      width={40}
+                      height={40}
+                      className="rounded-full object-cover flex-shrink-0"
                     />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">

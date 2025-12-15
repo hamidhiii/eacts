@@ -7,12 +7,11 @@ import { motion } from "framer-motion";
 import {
   Check,
   X,
-  Sparkles,
-  Zap,
   Crown,
   Users,
   HelpCircle,
   ArrowRight,
+  Star,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -133,21 +132,19 @@ export default function PricingPage() {
           <div className="inline-flex items-center gap-3 p-1 rounded-xl bg-secondary/50">
             <button
               onClick={() => setIsAnnual(false)}
-              className={`px-6 py-2 rounded-lg text-sm font-medium transition-all ${
-                !isAnnual
-                  ? "bg-gradient-primary text-white"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`px-6 py-2 rounded-lg text-sm font-medium transition-all ${!isAnnual
+                ? "bg-gradient-primary text-white"
+                : "text-muted-foreground hover:text-foreground"
+                }`}
             >
               Oylik
             </button>
             <button
               onClick={() => setIsAnnual(true)}
-              className={`px-6 py-2 rounded-lg text-sm font-medium transition-all ${
-                isAnnual
-                  ? "bg-gradient-primary text-white"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`px-6 py-2 rounded-lg text-sm font-medium transition-all ${isAnnual
+                ? "bg-gradient-primary text-white"
+                : "text-muted-foreground hover:text-foreground"
+                }`}
             >
               Yillik
               <Badge className="ml-2 bg-emerald-500/20 text-emerald-400 border-0">
@@ -164,9 +161,8 @@ export default function PricingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className={`glass-card rounded-2xl p-8 relative ${
-                plan.popular ? "border-emerald-500/50 shadow-lg shadow-emerald-500/20" : ""
-              }`}
+              className={`glass-card rounded-2xl p-8 relative ${plan.popular ? "border-emerald-500/50 shadow-lg shadow-emerald-500/20" : ""
+                }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -183,7 +179,7 @@ export default function PricingPage() {
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold">
                     {plan.price === "Boshqa" ? plan.price : (
-                      isAnnual && plan.price !== "0$" 
+                      isAnnual && plan.price !== "0$"
                         ? `${(parseFloat(plan.price) * 12 * 0.8).toFixed(2)}$`
                         : plan.price
                     )}
@@ -202,11 +198,10 @@ export default function PricingPage() {
               </div>
 
               <Button
-                className={`w-full mb-6 ${
-                  plan.popular
-                    ? "bg-gradient-primary hover:opacity-90"
-                    : "bg-secondary hover:bg-secondary/80"
-                }`}
+                className={`w-full mb-6 ${plan.popular
+                  ? "bg-gradient-primary hover:opacity-90"
+                  : "bg-secondary hover:bg-secondary/80"
+                  }`}
               >
                 {plan.cta}
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -246,7 +241,7 @@ export default function PricingPage() {
                   <Users className="w-6 h-6 text-emerald-400" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Bepul to'lov</h3>
+                  <h3 className="font-semibold text-lg">Bepul to&apos;lov</h3>
                   <p className="text-sm text-muted-foreground">10-20% platform fee per session</p>
                 </div>
               </div>
@@ -266,7 +261,7 @@ export default function PricingPage() {
               </ul>
               <Link href="/contact">
                 <Button className="bg-gradient-primary hover:opacity-90">
-                  Mentor bo'lish
+                  Mentor bo&apos;lish
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
@@ -297,7 +292,7 @@ export default function PricingPage() {
               </ul>
               <Link href="/contact">
                 <Button className="bg-gradient-primary hover:opacity-90">
-                  Mentor bo'lish
+                  Mentor bo&apos;lish
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
@@ -341,7 +336,7 @@ export default function PricingPage() {
               </ul>
               <Link href="/contact">
                 <Button className="bg-gradient-primary hover:opacity-90">
-                  Mentor bo'lish
+                  Mentor bo&apos;lish
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>

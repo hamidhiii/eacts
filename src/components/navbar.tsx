@@ -3,13 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sparkles, ChevronDown } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { href: "/opportunities", label: "Imkoniyatlar" },
   { href: "/search", label: "Qidiruv" },
-  { href: "/roadmap", label: "Yo'l Xaritasi" },
+  { href: "/roadmap", label: "Yo&apos;l Xaritasi" },
   { href: "/prep-hub", label: "Tayyorgarlik Markazlari" },
   { href: "/community", label: "Hamjamiyat" },
   { href: "/pricing", label: "Narxlar" },

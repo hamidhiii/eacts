@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
@@ -14,7 +15,6 @@ import {
   ArrowRight,
   BookOpen,
   MessageSquare,
-  Share2,
   Target,
   Sparkles,
   Globe,
@@ -150,11 +150,10 @@ export default function PrepHubPage() {
               <button
                 key={skill}
                 onClick={() => setSelectedSkill(skill)}
-                className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
-                  selectedSkill === skill
+                className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${selectedSkill === skill
                     ? "bg-gradient-primary text-white"
                     : "bg-secondary/50 text-muted-foreground hover:text-foreground hover:bg-secondary"
-                }`}
+                  }`}
               >
                 {skill}
               </button>
@@ -168,7 +167,7 @@ export default function PrepHubPage() {
               <Sparkles className="w-5 h-5 text-emerald-400" />
               Active Prep Hubs
             </h2>
-            
+
             {prepHubs.map((hub, i) => (
               <motion.div
                 key={hub.id}
@@ -179,10 +178,11 @@ export default function PrepHubPage() {
               >
                 <div className="flex flex-col sm:flex-row">
                   <div className="sm:w-48 h-40 sm:h-auto relative overflow-hidden">
-                    <img
+                    <Image
                       src={hub.image}
                       alt={hub.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/80 hidden sm:block" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent sm:hidden" />

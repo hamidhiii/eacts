@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Search,
-  Filter,
   Calendar,
   MapPin,
   Clock,
@@ -199,7 +199,7 @@ export default function OpportunitiesPage() {
             Barcha <span className="text-gradient">Imkoniyatlar</span> Bir Joyda
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Tadbirlar, tanlovlar, amaliyotlar va boshqalarni kashf qiling. Turkum bo'yicha filtrlang va hech qanday imkoniyatni o'tkazib yubormang.
+            Tadbirlar, tanlovlar, amaliyotlar va boshqalarni kashf qiling. Turkum bo&apos;yicha filtrlang va hech qanday imkoniyatni o&apos;tkazib yubormang.
           </p>
         </motion.div>
 
@@ -236,19 +236,17 @@ export default function OpportunitiesPage() {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
-                selectedCategory === category.id
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${selectedCategory === category.id
                   ? "bg-gradient-primary text-white"
                   : "bg-secondary/50 text-muted-foreground hover:text-foreground hover:bg-secondary"
-              }`}
+                }`}
             >
               <category.icon className="w-4 h-4" />
               {category.label}
-              <span className={`text-xs px-1.5 py-0.5 rounded-md ${
-                selectedCategory === category.id
+              <span className={`text-xs px-1.5 py-0.5 rounded-md ${selectedCategory === category.id
                   ? "bg-white/20"
                   : "bg-secondary"
-              }`}>
+                }`}>
                 {category.count}
               </span>
             </button>
@@ -268,10 +266,11 @@ export default function OpportunitiesPage() {
                 className="glass-card rounded-2xl overflow-hidden hover:border-emerald-500/30 transition-all group"
               >
                 <div className="relative h-40 overflow-hidden">
-                  <img
+                  <Image
                     src={opp.image}
                     alt={opp.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
                   {opp.featured && (

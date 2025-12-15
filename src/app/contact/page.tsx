@@ -17,7 +17,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Ofis",
-    value: "Toshkent, O'zbekiston",
+    value: "Toshkent, O&apos;zbekiston",
     description: "Bizni Markaziy Osiyoda toping",
   },
   {
@@ -50,10 +50,10 @@ export default function ContactPage() {
           className="text-center mb-12"
         >
           <h1 className="text-4xl sm:text-5xl font-bold font-['Sora'] mb-4">
-            <span className="text-gradient">Bog'lanish</span>
+            <span className="text-gradient">Bog&apos;lanish</span>
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Savollaringiz bormi? Takliflaringiz bormi? Hamkorlik qilmoqchimisiz? 
+            Savollaringiz bormi? Takliflaringiz bormi? Hamkorlik qilmoqchimisiz?
             Biz sizdan eshitishni istashimiz! Bizga xabar yuboring va tez orada javob beramiz.
           </p>
         </motion.div>
@@ -164,15 +164,15 @@ export default function ContactPage() {
                   <MessageSquare className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Tez-tez So'raladigan Savollar</h3>
+                  <h3 className="text-xl font-semibold mb-2">Tez-tez So&apos;raladigan Savollar</h3>
                   <p className="text-muted-foreground text-sm">
-                    Sizning savolingizga javobni allaqachon SSS bo'limida topishingiz mumkin. 
-                    Bizga murojaat qilishdan oldin ko'rib chiqing!
+                    Sizning savolingizga javobni allaqachon SSS bo&apos;limida topishingiz mumkin.
+                    Bizga murojaat qilishdan oldin ko&apos;rib chiqing!
                   </p>
                 </div>
               </div>
               <Button variant="outline" className="w-full">
-                SSS-ni Ko'rish
+                SSS-ni Ko&apos;rish
               </Button>
             </div>
 
@@ -184,7 +184,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Javob Vaqti</h3>
                   <p className="text-muted-foreground text-sm mb-4">
-                    Biz odatda 24-48 soat ichida javob beramiz. Shoshilinch masalalar uchun 
+                    Biz odatda 24-48 soat ichida javob beramiz. Shoshilinch masalalar uchun
                     bizga telefon orqali murojaat qiling.
                   </p>
                   <div className="text-sm">
@@ -204,11 +204,11 @@ export default function ContactPage() {
             <div className="glass-card rounded-2xl p-8 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border-emerald-500/20">
               <h3 className="text-xl font-semibold mb-2">Hamkorlik Imkoniyatlari</h3>
               <p className="text-muted-foreground text-sm mb-4">
-                Universitet, tashkilot yoki kompaniya bo'lib, hamkorlik qilishni xohlaysizmi? 
-                Bizning jamoa bilan maxsus hamkorlik imkoniyatlarini muhokama qilish uchun bog'laning.
+                Universitet, tashkilot yoki kompaniya bo&apos;lib, hamkorlik qilishni xohlaysizmi?
+                Bizning jamoa bilan maxsus hamkorlik imkoniyatlarini muhokama qilish uchun bog&apos;laning.
               </p>
               <Button variant="outline" className="w-full border-emerald-500/50 hover:bg-emerald-500/10">
-                Hamkorlik Haqida So'rash
+                Hamkorlik Haqida So&apos;rash
               </Button>
             </div>
           </motion.div>

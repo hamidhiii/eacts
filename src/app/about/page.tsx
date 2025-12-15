@@ -1,7 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, Target, Heart, TrendingUp, Award, Globe2, Zap, Sparkles } from "lucide-react";
+import { Target, Heart, TrendingUp, Globe2 } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const values = [
   {
@@ -61,6 +65,14 @@ const milestones = [
   { year: "2025", event: "AI shaxsiylashtirilgan yo'l xaritalari ishga tushirildi" },
 ];
 
+const partners = [
+  "Google",
+  "Microsoft",
+  "Huawei",
+  "AIESEC",
+  "Epam",
+];
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
@@ -77,9 +89,9 @@ export default function AboutPage() {
               Bizning Missiyamiz
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
-              E-ACTS Markaziy Osiyo talabalariga imkoniyatlarni kashf qilish, global tanlovlarga tayyorgarlik ko'rish 
-              va karyera yo'llarini yaratish uchun to'liq platformani taqdim etish orqali kuchga aylantirish uchun tashkil etilgan. 
-              Biz har bir talaba maxsus imkoniyatlarni topish va o'z potentsialiga erishishga haqli ekanligiga ishonishimiz.
+              E-ACTS Markaziy Osiyo talabalariga imkoniyatlarni kashf qilish, global tanlovlarga tayyorgarlik ko&apos;rish
+              va karyera yo&apos;llarini yaratish uchun to&apos;liq platformani taqdim etish orqali kuchga aylantirish uchun tashkil etilgan.
+              Biz har bir talaba maxsus imkoniyatlarni topish va o&apos;z potentsialiga erishishga haqli ekanligiga ishonishimiz.
             </p>
           </motion.div>
 
@@ -115,10 +127,10 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold font-['Sora'] mb-4">
-              Raqamlardagi Ta'sir
+              Raqamlardagi Ta&apos;sir
             </h2>
             <p className="text-muted-foreground text-lg">
-              Sayohatingizga qo'shiling va farq yarating
+              Sayohatingizga qo&apos;shiling va farq yarating
             </p>
           </motion.div>
 
@@ -153,7 +165,7 @@ export default function AboutPage() {
               Bizning Jamoamizni Tanishing
             </h2>
             <p className="text-muted-foreground text-lg">
-              Talabalar uchun imkoniyatlarni ochishga bag'ishlangan maxsus jamoachi
+              Talabalar uchun imkoniyatlarni ochishga bag&apos;ishlangan maxsus jamoachi
             </p>
           </motion.div>
 
@@ -167,10 +179,12 @@ export default function AboutPage() {
                 transition={{ delay: i * 0.1 }}
                 className="glass-card rounded-2xl p-6 text-center"
               >
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
-                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                  width={96}
+                  height={96}
+                  className="rounded-full mx-auto mb-4 object-cover"
                 />
                 <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
                 <div className="text-emerald-400 text-sm mb-3">{member.role}</div>
@@ -193,7 +207,7 @@ export default function AboutPage() {
               Bizning Sayohatimiz
             </h2>
             <p className="text-muted-foreground text-lg">
-              Fikirdan dunyoni o'zgartiruvchi platformagacha
+              Fikirdan dunyoni o&apos;zgartiruvchi platformagacha
             </p>
           </motion.div>
 
@@ -243,7 +257,7 @@ export default function AboutPage() {
         >
           <h2 className="text-2xl font-bold font-['Sora'] mb-4">Join Our Mission</h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            Whether you're a student, mentor, or organization, there's a place for you at E-ACTS.
+            Whether you&apos;re a student, mentor, or organization, there&apos;s a place for you at E-ACTS.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/auth/register">
